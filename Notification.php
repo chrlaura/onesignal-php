@@ -25,7 +25,7 @@ class Notification {
         $this->additionalData = array();
         $this->title = array();
         $this->subtitle_ios10 = array();
-        $this->includedSegments = array();
+        $this->includedSegments = array(OneSignal::SEGMENT_ALL);
     }
 
     public function addData($key, $value) {
@@ -33,6 +33,11 @@ class Notification {
     }
 
     public function addIncludedSegment($segment) {
+        // Check if 'All Users' segment is currently the only added segment.
+        if (sizeof($this->getIncludedSegments()) == 1 && in_array(OneSignal::SEGMENT_ALL, $this->getIncludedSegments())) {
+            // Reset included segments, before adding an included segment
+            $this->includedSegments = array();
+        }
         $this->includedSegments[] = $segment;
     }
 

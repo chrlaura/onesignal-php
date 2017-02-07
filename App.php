@@ -56,6 +56,8 @@ class App {
      ********************/
 
     public function sendNotification(Notification $notification) {
+
+
         $fields = array(
             OneSignal::KEY_APP_ID => $this->getId(),
             OneSignal::KEY_CONTENTS => $notification->getContent(),
