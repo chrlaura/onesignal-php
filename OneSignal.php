@@ -34,7 +34,7 @@ class OneSignal {
     const KEY_HEADINGS = "headings";
     const KEY_SUBTITLE = "subtitle";
 
-    const SEGMENT_ALL = "All Users";
+    const SEGMENT_ALL = "All";
     const SEGMENT_ACTIVE = "Active Users";
     const SEGMENT_INACTIVE = "Inactive Users";
 
