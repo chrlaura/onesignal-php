@@ -18,6 +18,8 @@ class Notification {
     private $content;
     private $additionalData;
     private $includedSegments;
+    private $badgeType_ios;
+    private $badgeCount_ios;
 
     function __construct($content, $defaultLanguage = OneSignal::LANG_EN) {
         $this->defaultLanguage = $defaultLanguage;
@@ -26,6 +28,8 @@ class Notification {
         $this->title = array();
         $this->subtitle_ios10 = array();
         $this->includedSegments = array(OneSignal::SEGMENT_ALL);
+        $this->badgeType_ios = OneSignal::BADGETYPE_NONE;
+        $this->badgeCount_ios = 1;
     }
 
     public function addData($key, $value) {
@@ -41,11 +45,41 @@ class Notification {
         $this->includedSegments[] = $segment;
     }
 
-
-
     /***********************
      * Getters and setters *
      ***********************/
+
+    /**
+     * @return string
+     */
+    public function getBadgeTypeIos()
+    {
+        return $this->badgeType_ios;
+    }
+
+    /**
+     * @param string $badgeType_ios
+     */
+    public function setBadgeTypeIos($badgeType_ios)
+    {
+        $this->badgeType_ios = $badgeType_ios;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBadgeCountIos()
+    {
+        return $this->badgeCount_ios;
+    }
+
+    /**
+     * @param int $badgeCount_ios
+     */
+    public function setBadgeCountIos($badgeCount_ios)
+    {
+        $this->badgeCount_ios = $badgeCount_ios;
+    }
 
     /**
      * @return array

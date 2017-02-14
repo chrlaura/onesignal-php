@@ -33,10 +33,16 @@ class OneSignal {
     const KEY_CONTENTS = "contents";
     const KEY_HEADINGS = "headings";
     const KEY_SUBTITLE = "subtitle";
+    const KEY_BADGECOUNT_IOS = "ios_badgeCount";
+    const KEY_BADGETYPE_IOS = "ios_badgeType";
 
     const SEGMENT_ALL = "All";
     const SEGMENT_ACTIVE = "Active Users";
     const SEGMENT_INACTIVE = "Inactive Users";
+
+    const BADGETYPE_NONE = "None";
+    const BADGETYPE_SETTO = "SetTo";
+    const BADGETYPE_INCREASE = "Increase";
 
     private $app_auth_key;
     private $user_auth_key;

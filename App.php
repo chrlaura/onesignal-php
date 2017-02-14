@@ -64,7 +64,9 @@ class App {
             OneSignal::KEY_DATA => $notification->getAdditionalData(),
             OneSignal::KEY_HEADINGS => $notification->getTitle(),
             OneSignal::KEY_SUBTITLE => $notification->getSubtitleForIos10(),
-            OneSignal::KEY_INCLUDED_SEGMENTS => $notification->getIncludedSegments()
+            OneSignal::KEY_INCLUDED_SEGMENTS => $notification->getIncludedSegments(),
+            OneSignal::KEY_BADGECOUNT_IOS => $notification->getBadgeCountIos(),
+            OneSignal::KEY_BADGETYPE_IOS => $notification->getBadgeTypeIos()
         );
 
         $response = $this->client->callEndpoint(OneSignal::NOTIFICATION_URL, OneSignal::REQUEST_POST, $fields);
